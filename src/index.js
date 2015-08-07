@@ -36,4 +36,6 @@ module.exports = function getXsrfToken (req) {
 				setTimeout(completeRequest);
 			});
 	};
+
+	return req;
 };
