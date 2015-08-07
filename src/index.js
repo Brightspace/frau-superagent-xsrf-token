@@ -18,7 +18,7 @@ module.exports = function getXsrfToken (req) {
 	req.end = function getXsrfTokenEndOverride (cb) {
 		function completeRequest () {
 			req.end = end;
-			req.end(cb);
+			return req.end(cb);
 		}
 
 		if (!isRelative(req.url)) {
@@ -35,6 +35,8 @@ module.exports = function getXsrfToken (req) {
 				// So we don't catch errors with our promise
 				setTimeout(completeRequest);
 			});
+
+		return this;
 	};
 
 	return req;
