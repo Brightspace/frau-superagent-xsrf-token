@@ -27,7 +27,7 @@ module.exports = function getXsrfToken (req) {
 
 		xsrfToken()
 			.then(function (token) {
-				req.set('X-Csrf-Token', token);
+				req.set(XSRF_HEADER, token);
 			})
 			.catch(noop)
 			.then(function () {
