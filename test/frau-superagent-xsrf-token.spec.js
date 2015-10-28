@@ -8,8 +8,8 @@ var XSRF_TOKEN = require('frau-xsrf-token/src/storage').set('foo-bar-baz');
 
 var xsrf = require('../');
 
-describe('frau-superagent-xsrf-token', function () {
-	it('should add xsrf token for relative URLs', function (done) {
+describe('frau-superagent-xsrf-token', function() {
+	it('should add xsrf token for relative URLs', function(done) {
 		var endpoint = nock('http://localhost')
 			.matchHeader('X-Csrf-Token', XSRF_TOKEN)
 			.get('/api')
@@ -18,13 +18,13 @@ describe('frau-superagent-xsrf-token', function () {
 		request
 			.get('/api')
 			.use(xsrf)
-			.end(function () {
+			.end(function() {
 				endpoint.done();
 				done();
 			});
 	});
 
-	it('should not add xsrf token for non-relative URLs', function (done) {
+	it('should not add xsrf token for non-relative URLs', function(done) {
 		var endpoint = nock('http://localhost')
 			.get('/api')
 			.reply(200);
@@ -32,7 +32,7 @@ describe('frau-superagent-xsrf-token', function () {
 		var req = request
 			.get('http://localhost/api')
 			.use(xsrf)
-			.end(function () {
+			.end(function() {
 				expect(req.req._headers).not.to.have.property('x-csrf-token');
 				endpoint.done();
 				done();

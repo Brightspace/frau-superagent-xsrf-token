@@ -4,19 +4,19 @@ var xsrfToken = require('frau-xsrf-token');
 
 var XSRF_HEADER = 'X-Csrf-Token';
 
-function noop () {}
+function noop() {}
 
-function isRelative/*ly safe*/ (url) {
+function isRelative/*ly safe*/(url) {
 	return typeof url === 'string'
 		&& url.length > 0
 		&& url[0] === '/';
 }
 
-module.exports = function getXsrfToken (req) {
+module.exports = function getXsrfToken(req) {
 	var end = req.end;
 
-	req.end = function getXsrfTokenEndOverride (cb) {
-		function completeRequest () {
+	req.end = function getXsrfTokenEndOverride(cb) {
+		function completeRequest() {
 			req.end = end;
 			return req.end(cb);
 		}
@@ -26,11 +26,11 @@ module.exports = function getXsrfToken (req) {
 		}
 
 		xsrfToken()
-			.then(function (token) {
+			.then(function(token) {
 				req.set(XSRF_HEADER, token);
 			})
 			.catch(noop)
-			.then(function () {
+			.then(function() {
 				// Run this async in another turn
 				// So we don't catch errors with our promise
 				setTimeout(completeRequest);
