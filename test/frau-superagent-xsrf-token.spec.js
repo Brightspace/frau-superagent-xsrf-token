@@ -34,6 +34,7 @@ describe('frau-superagent-xsrf-token', function () {
 			.use(xsrf)
 			.end(function () {
 				expect(req.req._headers).not.to.have.property('x-csrf-token');
+				endpoint.done();
 				done();
 			});
 	});
