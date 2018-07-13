@@ -1,14 +1,15 @@
 language: node_js
 node_js:
-- 0.12.4
+  - 0.12.4
 sudo: false
 after_success:
-- npm run report-coverage
+  - npm run report-coverage
 deploy:
   provider: npm
   email: d2ltravisdeploy@d2l.com
   api_key:
-    secure: UbFfskysCcu3JxX4zCBnAjuhuniPp4P5uxmmbxYliDBNdm4BDVPzGkaYuzzXKxV3S9YmxYh+WT0PQSVjmT+sa7SrTXTNQUga779KeUpdzU3KSQQq4x3I87ig4I3TdAslyX4vCkx++Un6RDdPJaN8jdpNB8CxVi80kKu2EdX8+De7FSMbU4DRA8DrNJQ/28i+30bmKS/On/8BnSOahwx+bXKPNu8qydo/coym37CfFucQvpscqGur4x3QFfz7xZ99/0nado+dfI2rhyWOqCc8itaPyv3po5uZ76UbZ9m7fEh4og1My1ImULovr6SfADPg2nALkEkRJj36YGZbCZxfr/MQyblz3lBmlxU6IKtXJ3VABD1fCvdsTwMbDnkzR7CVT4Twe9edb6L+tyZrY/zitsCC9/XCaTzh0xHOQ2wgMHaQavQUcXa8uU/drBKtTfs33RZc89eO31X7Llt2M6OPA8tsZZcbNKVvVW2oyS1Nff5pyMdxd2jh/fveKg7I+gvBrGT3YSBySegNt775U5qRIq+JschW47+vA6cP4TlMbp7Tv3rgs7w8nBLinHeKuIe8hH/34MCyVYGkRxi5RiESeS1M6FIXFjhiscAvo2bZT5QN3CoBN1i10VGSMx8LFEJQM+Ctb/O2CBRY5lE7PIAi9fxOprhVUjrICQprR2Zkxbo=
+    # d2l-travis-deploy: f061......1f4e
+    secure: DTx6RpbTDeM8sEoBHR+Lr4g4UIRIv8uoZzxF+ahQFtlNoFNw6/MupU2i0q2E71r/f+EaR84fJEy+DPposjbzo2ubkkEdaTqTIkVMwAjRcTl07yd+RzyX1KKSWVF8e9X/aYjUmc/AMjE3wQyjgK8c2vm6Q4hwAGUmnLajNRIOOnraV9Rw7j/NrF+CuNfiG1I76OQTyDMbtAceAcDxP2Bt+a7iOcVjACQvDUDTtolNTzMvzwHTVMLYwZLplgauRTs8PddvgdqDkkVVSUq3zouvYpuMfNepJvKJFq/3NvMSezmW5dTF8gcpFGWAgqJGKdEbFXgBhVxGKVXrYb21OypfrzXcxUCRo1h4C+0EWbvs3TZjE1uaAkiFKU7uP9KudMTP8NAkJcKKaY52qvGpiwRC4mj3Cb9NPEQy5Evs6/2cdEJ3r8Y4h6eMzP5v+12Ko2v/Nk/a2ur6P+PeLgg3ke0kbiE1Em4K8uG+5Q/dlKsUJMiX9NxSmR4bRckyEDhuK99z3FRCeETtopb5usd2qppS3haduIoKxtaSoehoz1Pdk+XRidLGDAm/Y+pQhCXAh8qbI8e1NFTRkIOXI5X97d8k4OaP19T2Rf8p6y/SS5H190DqlRkwBwOra83SFIVGXuRxWtvCD7prmVdgs0T5dlJN1Okc48YMxp517PN9sZvni1Q=
   on:
     tags: true
     repo: Brightspace/frau-superagent-xsrf-token
