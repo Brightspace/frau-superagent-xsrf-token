@@ -29,11 +29,11 @@ describe('frau-superagent-xsrf-token', function() {
 			.get('/api')
 			.reply(200);
 
-		var req = request
+		request
 			.get('http://localhost/api')
 			.use(xsrf)
-			.end(function() {
-				expect(req.req._headers).not.to.have.property('x-csrf-token');
+			.then(function(res) {
+				expect(res.request.req.headers).not.to.have.property('x-csrf-token');
 				endpoint.done();
 				done();
 			});
