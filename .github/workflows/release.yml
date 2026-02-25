@@ -18,7 +18,8 @@ jobs:
       - name: Setup Node
         uses: Brightspace/setup-node@main
         with:
-          node-version: 20
+          node-version-file: .nvmrc
+          cache: 'npm'
       - name: Semantic Release
         uses: BrightspaceUI/actions/semantic-release@main
         with:

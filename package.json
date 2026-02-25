@@ -4,11 +4,13 @@
   "description": "A superagent plugin that adds XSRF headers in FRAs",
   "main": "src/index.js",
   "scripts": {
-    "check-style": "eslint .",
-    "test-unit": "istanbul cover _mocha test/*.spec.js",
-    "test": "npm run check-style && npm run test-unit",
-    "report-coverage": "coveralls < coverage/lcov.info"
+    "test": "mocha"
   },
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Brightspace/frau-superagent-xsrf-token.git"
@@ -24,17 +26,12 @@
     "url": "https://github.com/Brightspace/frau-superagent-xsrf-token/issues"
   },
   "dependencies": {
-    "frau-xsrf-token": "^2.0.0"
+    "frau-xsrf-token": "^2"
   },
   "devDependencies": {
-    "chai": "^3.4.0",
-    "coveralls": "^2.11.4",
-    "eslint": "^1.7.3",
-    "eslint-config-brightspace": "0.0.3",
-    "eslint-plugin-react": "^3.16.1",
-    "istanbul": "^0.4.0",
-    "mocha": "^2.3.3",
-    "nock": "^2.15.0",
-    "superagent": "^7"
+    "chai": "^6",
+    "mocha": "^11",
+    "nock": "^14",
+    "superagent": "^10"
   }
 }

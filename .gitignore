@@ -1,9 +1,1 @@
-node_modules/
-
-*.log
-*.swo
-*.swp
-
-dist/
-coverage/
-package-lock.json
+node_modules
