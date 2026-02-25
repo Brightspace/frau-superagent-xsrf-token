@@ -1,6 +1,6 @@
 'use strict';
 
-var xsrfToken = require('frau-xsrf-token');
+var xsrfToken = require('frau-xsrf-token').default;
 
 var XSRF_HEADER = 'X-Csrf-Token';
 
