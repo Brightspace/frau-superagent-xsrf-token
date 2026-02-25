@@ -4,11 +4,19 @@ var expect = require('chai').expect,
 	nock = require('nock'),
 	request = require('superagent');
 
-var XSRF_TOKEN = require('frau-xsrf-token/src/storage').set('foo-bar-baz');
+var XSRF_TOKEN = 'foo-bar-baz';
 
 var xsrf = require('../');
 
 describe('frau-superagent-xsrf-token', function() {
+
+	before(() => {
+		globalThis.localStorage = {
+			getItem: function() {
+				return XSRF_TOKEN;
+			}
+		};
+	});
 
 	it('should add xsrf token for relative URLs', function(done) {
 		let reqSpy;
