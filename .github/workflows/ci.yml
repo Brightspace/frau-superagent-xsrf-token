@@ -10,9 +10,8 @@ jobs:
       - uses: Brightspace/setup-node@main
         with:
           node-version-file: .nvmrc
+          cache: 'npm'
       - name: Install dependencies
-        run: npm install
-      - name: Lint (JavaScript)
-        run: npm run check-style
+        run: npm ci
       - name: Unit Tests
-        run: npm run test-unit
+        run: npm run test
