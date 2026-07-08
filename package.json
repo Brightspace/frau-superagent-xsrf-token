@@ -25,6 +25,9 @@
   "bugs": {
     "url": "https://github.com/Brightspace/frau-superagent-xsrf-token/issues"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "dependencies": {
     "frau-xsrf-token": "^3"
   },
