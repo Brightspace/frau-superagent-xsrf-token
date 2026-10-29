@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect,
-	nock = require('nock'),
+	nock = require('nock').default,
 	request = require('superagent');
 
 var XSRF_TOKEN = 'foo-bar-baz';
